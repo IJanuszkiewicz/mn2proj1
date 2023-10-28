@@ -2,7 +2,7 @@ function r = nlin(f, bisecf)
 % Autor: Igor Januszkiewicz
 
 if nargin < 2
-    bisecf = @bisec;
+    bisecf = @optBisec;
 end
 
 accuracy = 500*eps();
@@ -23,7 +23,7 @@ while  b < maxPossible
         end
     end
 
-    if isreal(f(-a)) && isreal(f(-b)) && f(-a)*f(-b) < 0
+    if isreal(f(-a)) && isreal(f(-b)) && f(-a)*f(-b) <= 0
         rUsed = rUsed + 1;
         r(rUsed) = bisecf(-a,-b,f);
         if rUsed == rSize

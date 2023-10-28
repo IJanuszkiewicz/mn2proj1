@@ -6,7 +6,7 @@ maxLoops = 100;
 i = 0;
 x = (a + b)/2;
 while abs(b - a) > 2*accuracy && i < maxLoops
-    if f(a)*f(b) >= 0
+    if f(a)*f(x) >= 0
         a = x;
     else 
         b = x;
