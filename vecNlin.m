@@ -6,13 +6,16 @@ if nargin < 2
     accuracy = 500*eps();
 end
 
-accuracyRatio = 1.00015;
+accuracyRatio = 1.00005;
 maxPossible = 3024;
 
 [a,b] = vecGetVectors(maxPossible,accuracyRatio,accuracy);
 
-rootIndexes = imag(f(a)) == 0 & imag(f(b)) == 0 & ...
-    sign(f(a)).*sign(f(b)) < 0;
+
+fa = f(a);
+fb = f(b);
+rootIndexes = imag(fa) == 0 & imag(fb) == 0 & ...
+    sign(fa).*sign(fb) < 0;
 
 r = vecBisec(a(rootIndexes), b(rootIndexes), f);
 
