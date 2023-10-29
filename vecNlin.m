@@ -7,10 +7,9 @@ if nargin < 2
 end
 
 accuracyRatio = 1.00005;
-maxPossible = 3024;
+maxPossible = 1e9;
 
 [a,b] = vecGetVectors(maxPossible,accuracyRatio,accuracy);
-
 
 fa = f(a);
 fb = f(b);
