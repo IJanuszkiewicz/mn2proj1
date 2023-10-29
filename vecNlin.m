@@ -7,7 +7,7 @@ if nargin < 2
 end
 
 accuracyRatio = 1.00005;
-maxPossible = 1e9;
+maxPossible = 1e20;
 
 [a,b] = vecGetVectors(maxPossible,accuracyRatio,accuracy);
 
